@@ -1,6 +1,9 @@
+@use '@/styles' as *;
 @use 'scss-reset/reset';
+@use 'base/common';
 
 
 body {
-  font-family: var(--font-spoqa)
+  font-family: var(--font-spoqa), 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+  
 }
