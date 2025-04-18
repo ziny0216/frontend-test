@@ -1,0 +1,20 @@
+@use '../index' as *;
+
+.layout_header {
+  background-color: $main-color;
+
+  .header_inner {
+    max-width: 1112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    margin: 0 auto;
+  }
+
+  .tab_list {
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+}

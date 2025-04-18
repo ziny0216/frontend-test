@@ -1,0 +1,30 @@
+@use '../index' as *;
+
+.tab_list {
+  .tab_item {
+    padding: 8px;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+    font-weight: $font-weight-bold;
+    color: $gray-900;
+    display: block;
+    text-decoration: none;
+    min-width: 65px;
+    text-align: center;
+    transition: color 0.3s ease-in-out;
+
+    &.active {
+      color: $gray-20;
+    }
+  }
+
+  .swiper {
+    padding-inline: 8px;
+
+
+    &-slide {
+      width: auto;
+    }
+
+  }
+}

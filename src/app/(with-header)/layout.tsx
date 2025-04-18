@@ -3,6 +3,7 @@ import '@/styles/global.scss';
 import StoreProvider from '@/components/provider/StoreProvider';
 import { spoqa } from '@/styles/fonts';
 import { ReactNode } from 'react';
+import LayoutHeader from '@/components/layout/LayoutHeader';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={spoqa.variable}>
+        <LayoutHeader />
         <StoreProvider> {children}</StoreProvider>
       </body>
     </html>

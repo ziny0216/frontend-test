@@ -1,0 +1,42 @@
+.flex {
+  display: flex;
+
+  &-align-center {
+    display: flex;
+    align-items: center;
+  }
+
+  &-justify-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-justify-center {
+    display: flex;
+    justify-content: center;
+  }
+
+  &-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.mr-auto {
+  margin-right: auto;
+}
+
+.text-none {
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+
+.text-inherit {
+  @extend .text-none;
+  color: inherit;
+}
