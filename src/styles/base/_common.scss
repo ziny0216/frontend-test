@@ -5,9 +5,13 @@
 section {
   .inner {
     max-width: 1096px;
-    padding: 0 16px;
+    padding: 24px 16px;
     margin: 0 auto;
   }
+}
+
+.bg-gray {
+  background-color: #EBEBEB;
 }
 
 .flex {

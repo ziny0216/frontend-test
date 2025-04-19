@@ -1,0 +1,13 @@
+@use '../index' as *;
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  .list-title {
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+    font-weight: $font-weight-bold;
+  }
+}

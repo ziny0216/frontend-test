@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import '@/styles/components/banner.scss';
+import '@/styles/components/item.scss';
 import Badge from '@/components/common/Badge';
 import Button from '@/components/common/Button';
 

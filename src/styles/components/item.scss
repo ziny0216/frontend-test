@@ -1,0 +1,92 @@
+@use '../index' as *;
+
+.card-item {
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  border: 1px solid $gray-200;
+  position: relative;
+
+  .card-img {
+    max-height: 500px;
+    width: 100%;
+
+    img {
+      transition: scale 0.3s ease-in-out;
+    }
+
+    &:hover {
+      img {
+        scale: 1.1;
+      }
+    }
+  }
+
+  .card-content {
+    background-color: $white;
+    padding: 16px;
+    gap: 4px;
+
+    .title {
+      font-weight: $font-weight-m;
+      line-height: $line-height-md;
+
+      > h6 {
+        width: calc(100% - 100px);
+      }
+    }
+
+    .date {
+      color: $gray-600;
+      font-size: $font-size-xs;
+      line-height: $line-height-xs;
+      text-align: right;
+    }
+  }
+
+  .badge {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 16px;
+  }
+}
+
+.chart-item {
+  gap: 8px;
+
+
+  .chart-img {
+    max-width: 80px;
+  }
+
+  .card-content {
+    gap: 8px;
+    flex: auto;
+
+    .char-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+
+      gap: 4px;
+      font-size: $font-size-md;
+      line-height: $line-height-xl;
+      font-weight: $font-weight-m;
+
+
+      span:nth-child(2) {
+        color: $gray-500
+      }
+    }
+
+    .chart-rank {
+      font-size: $font-size-xl;
+      line-height: $line-height-xl;
+    }
+
+    .chart-factor {
+      align-self: flex-end;
+    }
+  }
+}
