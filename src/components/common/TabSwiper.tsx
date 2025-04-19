@@ -32,7 +32,7 @@ export default function TabSwiper({
     }
   };
   return (
-    <div className="tab_list">
+    <div className="tab-list">
       <Swiper
         onSwiper={swiper => {
           setSwiper(swiper);
@@ -43,7 +43,7 @@ export default function TabSwiper({
         {tabList.map((tab, idx) => (
           <SwiperSlide key={tab.value}>
             <button
-              className={`tab_item ${activeTab === tab.value ? 'active' : ''}`}
+              className={`tab-item ${activeTab === tab.value ? 'active' : ''}`}
               type="button"
               onClick={() => onClickTab(tab, idx)}
             >

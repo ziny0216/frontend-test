@@ -5,10 +5,11 @@ import CardItem from '@/components/page/CardItem';
 import '@/styles/components/banner.scss';
 import 'swiper/css/pagination';
 import { Autoplay, Pagination } from 'swiper/modules';
+import Link from 'next/link';
 
 export default function MainBannerSwiper() {
   return (
-    <div className="main_banner">
+    <div className="main-banner">
       <Swiper
         pagination={{
           clickable: true,
@@ -24,19 +25,49 @@ export default function MainBannerSwiper() {
         }}
       >
         <SwiperSlide>
-          <CardItem />
+          <Link
+            className="text-inherit"
+            href={'https://www.hanteochart.com/'}
+            target="_blank"
+          >
+            <CardItem />
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <CardItem />
+          <Link
+            className="text-inherit"
+            href={'https://www.hanteochart.com/'}
+            target="_blank"
+          >
+            <CardItem />
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <CardItem />
+          <Link
+            className="text-inherit"
+            href={'https://www.hanteochart.com/'}
+            target="_blank"
+          >
+            <CardItem />
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <CardItem />
+          <Link
+            className="text-inherit"
+            href={'https://www.hanteochart.com/'}
+            target="_blank"
+          >
+            <CardItem />
+          </Link>
         </SwiperSlide>
         <SwiperSlide>
-          <CardItem />
+          <Link
+            className="text-inherit"
+            href={'https://www.hanteochart.com/'}
+            target="_blank"
+          >
+            <CardItem />
+          </Link>
         </SwiperSlide>
       </Swiper>
     </div>
