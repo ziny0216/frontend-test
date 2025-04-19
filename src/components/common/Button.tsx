@@ -6,11 +6,17 @@ export default function Button({
   text,
   className,
   isLoading = false,
+  role = 'button',
   ...props
 }: ButtonPropsType) {
   return (
-    <button {...props} type="button" className={className}>
-      {isLoading ? <Spinner /> : null}
+    <button
+      disabled={isLoading || props.disabled}
+      {...props}
+      type="button"
+      className={`${isLoading && 'loading'} ${className}`}
+    >
+      {isLoading ? <Spinner size={10} /> : null}
       {text}
     </button>
   );

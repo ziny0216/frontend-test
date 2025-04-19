@@ -5,11 +5,7 @@ export default function Spinner({ size }: { size?: number }) {
       width={size}
       height={size}
       style={{
-        width: '1em',
-        height: '1em',
-        verticalAlign: 'middle',
         fill: 'currentColor',
-        overflow: 'hidden',
       }}
       viewBox="0 0 1024 1024"
       version="1.1"
