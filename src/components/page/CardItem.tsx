@@ -7,7 +7,7 @@ export default function CardItem() {
   return (
     <div className="card-item">
       <div className="card-img img-wide">
-        <img src="https://picsum.photos/300/200" alt="카드 이미지" />
+        <img src="https://picsum.photos/1500" alt="카드 이미지" />
         <Badge />
       </div>
       <div className="card-content flex flex-col">
