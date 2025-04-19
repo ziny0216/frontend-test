@@ -18,3 +18,21 @@
     align-items: center;
   }
 }
+
+.sticky {
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: $main-color;
+}
+
+.navibar {
+  position: sticky;
+  top: -53Px;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}

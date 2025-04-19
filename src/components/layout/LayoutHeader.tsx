@@ -5,13 +5,15 @@ import '@/styles/layout/header.scss';
 
 export default function LayoutHeader() {
   return (
-    <header className="layout_header">
+    <header className="layout_header navibar">
       <div className="header_inner flex-justify-center">
         <Link className="text-none" href="/">
           로고
         </Link>
       </div>
-      <TabSwiper tabList={naviList} />
+      <div className="navibar">
+        <TabSwiper tabList={naviList} activeValue="chart" />
+      </div>
     </header>
   );
 }
