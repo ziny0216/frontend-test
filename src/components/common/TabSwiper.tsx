@@ -10,13 +10,15 @@ import { useRouter } from 'next/navigation';
 export default function TabSwiper({
   tabList,
   handleTabItem,
+  activeValue,
 }: {
   tabList: TabItemType[];
+  activeValue?: string;
   handleTabItem?: (tab: TabItemType) => void;
 }) {
   const router = useRouter();
   const [swiper, setSwiper] = useState<SwiperClass>();
-  const [activeTab, setActiveTab] = useState('');
+  const [activeTab, setActiveTab] = useState(activeValue ?? '');
 
   const onClickTab = (tab: TabItemType, idx: number) => {
     setActiveTab(tab.value); // 활성화 탭 저장
