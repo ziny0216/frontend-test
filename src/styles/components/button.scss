@@ -1,0 +1,91 @@
+@use '../index' as *;
+
+.btn {
+  padding: 8px 14px;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  font-weight: $font-weight-m;
+
+  &-sm {
+    padding: 2px 12px;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+    font-weight: $font-weight-semi
+  }
+
+  &-lg {
+    padding: 8px 14px;
+    font-size: $font-size-md;
+    line-height: $line-height-md;
+    font-weight: $font-weight-semi;
+  }
+
+  &,
+  &-sm,
+  &-lg {
+    border-radius: $border-radius-sm;
+  }
+
+  &-rounded {
+    border-radius: 50em;
+  }
+
+  &-radius-md {
+    border-radius: $border-radius-md;
+  }
+
+  &-radius-none {
+    border-radius: 0;
+  }
+
+  &-gray {
+    background-color: #fff;
+    border: 1px solid $gray-300;
+    color: $gray-700;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: $gray-800;
+      background-color: $gray-50;
+    }
+
+    &:disabled, .disabled {
+      background-color: $gray-200;
+      color: $gray-300;
+    }
+  }
+
+  &-pink {
+    background-color: $primary-color;
+    border: 1px solid $primary-color;
+    color: $white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+
+      background-color: $main-color;
+    }
+
+    &:disabled, .disabled {
+      background-color: $main-color;
+    }
+  }
+
+  &-border-pink {
+    border: 1px solid $primary-color;
+    color: $primary-color;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: lighten($primary-color, 28%);
+
+    }
+
+    &:disabled, .disabled {
+      border-color: lighten($primary-color, 15%);
+      color: $white;
+      background-color: lighten($primary-color, 20%);
+    }
+  }
+}
+

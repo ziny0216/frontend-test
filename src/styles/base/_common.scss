@@ -1,25 +1,46 @@
+@use '../index' as *;
+@use 'sass:math';
+
+
+section {
+  .inner {
+    max-width: 1096px;
+    padding: 0 16px;
+    margin: 0 auto;
+  }
+}
+
 .flex {
   display: flex;
 
+  &-col {
+    flex-direction: column;
+  }
+
   &-align-center {
-    display: flex;
     align-items: center;
   }
 
   &-justify-center {
-    display: flex;
     justify-content: center;
   }
 
   &-justify-center {
-    display: flex;
     justify-content: center;
+  }
+
+  &-justify-between {
+    justify-content: space-between;
   }
 
   &-center {
-    display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &-between-center {
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
@@ -40,3 +61,65 @@
   @extend .text-none;
   color: inherit;
 }
+
+
+$img-radius: (
+        null:null,
+        50:$border-radius-xl,
+        32:$border-radius-lg,
+        16:$border-radius-md,
+        8:$border-radius-sm,
+        4:$border-radius-xs
+);
+
+$img-ratio: (
+        null:null,
+        'square': math.div(1, 1),
+        'wide': math.div(16, 9),
+        'full': math.div(4, 3)
+);
+
+
+@each $ratio-name, $ratio-value in $img-ratio {
+  @each $radius-key, $radius-value in $img-radius {
+
+    $class-name: if($radius-key == null, ".img-#{$ratio-name}", ".img-#{$ratio-name}-#{$radius-key}");
+
+    #{$class-name} {
+      @include img-box($ratio-value, $radius-value);
+    }
+  }
+}
+
+
+@for $i from 1 through 5 {
+  @if $i == 1 {
+    .ellipsis#{$i} {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  } @else {
+    .ellipsis#{$i} {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: $i;
+      -webkit-box-orient: vertical;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+}
+
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-icon {
+  animation: rotate 1s linear infinite;
+}
+

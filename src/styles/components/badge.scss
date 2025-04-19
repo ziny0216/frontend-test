@@ -1,0 +1,31 @@
+@use '../index' as *;
+
+.badge {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+  font-weight: $font-weight-bold;
+  border-radius: $border-radius-sm;
+
+  &-sm {
+    @extend .badge;
+    font-size: $font-size-xs;
+    line-height: $line-height-xs;
+  }
+
+  &-black {
+    color: $white;
+    background-color: $black;
+  }
+
+  &-gray {
+    color: $gray-700;
+    background-color: $gray-200;
+  }
+
+  &-pink {
+    color: $white;
+    background-color: $primary-color;
+  }
+}
