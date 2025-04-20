@@ -32,7 +32,6 @@ export default function MainBannerSwiper() {
         modules={[Pagination, Autoplay]}
         loop
         spaceBetween={8}
-        autoHeight
         slidesPerView={1.1}
         autoplay={{
           delay: 5000,
