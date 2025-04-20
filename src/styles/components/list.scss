@@ -16,4 +16,37 @@
     flex-direction: column;
     gap: 16px;
   }
+
+  &.grid {
+    .list-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+    }
+  }
 }
+
+
+/* 미디어 쿼리 */
+@include sm-tablet {
+  .list-container {
+    &.grid {
+      .list-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+  }
+}
+
+@include mobile {
+  .list-container {
+    &.grid {
+      .list-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr)
+        
+      }
+    }
+  }
+}
+
