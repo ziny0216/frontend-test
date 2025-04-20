@@ -11,6 +11,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.7.0",
     "dayjs": "^1.11.13",
+    "msw": "^2.7.5",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -29,5 +30,10 @@
     "sass": "^1.86.3",
     "scss-reset": "^1.4.6",
     "typescript": "^5"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }
