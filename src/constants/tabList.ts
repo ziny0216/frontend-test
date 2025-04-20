@@ -3,7 +3,7 @@ import { TabItemType } from '@/types/common';
 export const naviList: TabItemType[] = [
   {
     name: '차트',
-    value: 'chart',
+    value: '/',
     type: 'a',
   },
   {

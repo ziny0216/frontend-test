@@ -3,12 +3,22 @@
 .main-banner {
   margin: 20px 0 10px;
 
-  .swiper-pagination {
-    position: unset;
-    margin-top: 8px;
+  .card-item {
+    height: 100%;
+  }
 
-    &-bullet-active {
-      background-color: $primary-color;
+  .swiper {
+    &-slide {
+      height: 100%;
+    }
+
+    &-pagination {
+      position: unset;
+      margin-top: 8px;
+
+      &-bullet-active {
+        background-color: $primary-color;
+      }
     }
   }
 }

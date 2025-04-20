@@ -14,7 +14,7 @@ export default function LayoutHeader() {
         </Link>
       </div>
       <div>
-        <TabSwiper tabList={naviList} activeValue="chart" />
+        <TabSwiper tabList={naviList} activeValue="/" />
       </div>
     </header>
   );
