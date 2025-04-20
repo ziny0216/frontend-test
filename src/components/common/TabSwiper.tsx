@@ -24,9 +24,7 @@ export default function TabSwiper({
     setActiveTab(tab.value); // 활성화 탭 저장
     swiper?.slideTo(idx); // 클릭한 슬라이드 index 이동
     if (tab.type === 'a') {
-      // router.push(tab.value);
-      //TODO 페이지 생성 후 위 주석 살릴것
-      router.push('/');
+      router.push(tab.value);
     } else {
       handleTabItem?.(tab);
     }
