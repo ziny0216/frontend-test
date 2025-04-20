@@ -1,32 +1,64 @@
 'use client';
-import { useEffect, useState } from 'react';
+
 import ListContainer from '@/components/layout/ListContainer';
-import { ChartItemType } from '@/types/chart';
 import ChartItem from '@/components/page/ChartItem';
+import { ChartItemType } from '@/types/chart';
+import { useInfiniteQuery } from '@tanstack/react-query';
+import { useEffect, useRef } from 'react';
+import Spinner from '@/components/common/Spinner';
 
 export default function ChartList({ title }: { title: string }) {
-  const [chartList, setChartList] = useState<ChartItemType[]>([]);
-  const [page, setPage] = useState(1);
+  const infiniteRef = useRef<HTMLDivElement | null>(null);
+
+  const fetchChartList = async ({ pageParam = 1 }) => {
+    const res = await fetch(`/api/chart?page=${pageParam}&limit=10`);
+    return res.json();
+  };
+
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery({
+      queryKey: ['chart'],
+      queryFn: fetchChartList,
+      getNextPageParam: (lastPage, allPages) => {
+        return lastPage.data.length < 10 ? undefined : allPages.length + 1;
+      },
+      initialPageParam: 1,
+    });
+
   useEffect(() => {
-    const fetchChart = async () => {
-      const res = await fetch('/api/chart?page=1&limit=10');
-      const { data } = await res.json();
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting && hasNextPage && !isFetchingNextPage) {
+          fetchNextPage();
+        }
+      },
+      {
+        threshold: 1.0,
+      },
+    );
 
-      if (data < 10) {
-        alert('마지막 페이지 입니다.');
-      }
-
-      setChartList(prev => [...data, ...prev]);
+    const el = infiniteRef.current;
+    if (el) observer.observe(el);
+    return () => {
+      if (el) observer.unobserve(el);
     };
-
-    fetchChart();
-  }, []);
+  }, [hasNextPage, isFetchingNextPage]);
 
   return (
     <ListContainer title={title}>
-      {chartList.map(chart => (
-        <ChartItem key={`chart-${chart.id}`} {...chart} />
-      ))}
+      {data?.pages.map((page, pageIndex) =>
+        page.data.map((chart: ChartItemType) => (
+          <ChartItem key={`chart-${chart.id}`} {...chart} />
+        )),
+      )}
+
+      <div ref={infiniteRef} style={{ height: 1 }} />
+      {isFetchingNextPage && (
+        <div>
+          <Spinner size={24} />
+          로딩 중...
+        </div>
+      )}
     </ListContainer>
   );
 }

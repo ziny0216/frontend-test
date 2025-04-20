@@ -4,6 +4,7 @@ import StoreProvider from '@/components/provider/StoreProvider';
 import { spoqa } from '@/styles/fonts';
 import { ReactNode } from 'react';
 import MswProvider from '@/components/provider/MswProvider';
+import ReactQueryProvider from '@/components/provider/QueryClientProvider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,9 +19,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={spoqa.variable}>
-        <MswProvider>
-          <StoreProvider> {children}</StoreProvider>
-        </MswProvider>
+        <ReactQueryProvider>
+          <MswProvider>
+            <StoreProvider> {children}</StoreProvider>
+          </MswProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );
