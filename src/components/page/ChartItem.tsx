@@ -1,7 +1,21 @@
 import { formatLocalString } from '@/utils/format';
 import '@/styles/components/item.scss';
+import { ChartItemType } from '@/types/chart';
 
-export default function ChartItem() {
+export default function ChartItem(props: ChartItemType) {
+  const getRankChange = (rank: number, prevRank: number) => {
+    const diff = prevRank - rank;
+    if (diff === 0) return '-';
+    return diff > 0 ? `▲ ${diff}` : `▼ ${Math.abs(diff)}`;
+  };
+
+  const rankClass =
+    props.prevRank > props.rank
+      ? 'up'
+      : props.prevRank < props.rank
+        ? 'down'
+        : '';
+
   return (
     <div className="chart-item flex flex-align-center">
       <div className="chart-img img-square-16">
@@ -9,15 +23,17 @@ export default function ChartItem() {
       </div>
       <div className="card-content flex ">
         <p className="char-info chart-rank">
-          <span>1</span>
-          <span>-</span>
+          <span className="rank">{props.rank}</span>
+          <span className={`num ${rankClass}`}>
+            {getRankChange(props.rank, props.prevRank)}
+          </span>
         </p>
         <div className="char-info">
-          <span>마크</span>
-          <span>SM</span>
+          <span>{props.artist}</span>
+          <span>{props.agency}</span>
         </div>
         <p className="char-info chart-factor ml-auto">
-          {formatLocalString(123123)}
+          {formatLocalString(props.score)}
         </p>
       </div>
     </div>

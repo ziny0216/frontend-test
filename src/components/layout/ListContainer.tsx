@@ -11,7 +11,7 @@ export default function ListContainer({
   children: ReactNode;
 }) {
   return (
-    <div className={`list-container ${className}`}>
+    <div className={`list-container ${className || ''}`}>
       <div className="list-title">{title}</div>
       <div className="list-content">{children}</div>
     </div>

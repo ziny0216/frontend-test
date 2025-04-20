@@ -1,6 +1,5 @@
 import MainBannerSwiper from '@/components/common/MainBannerSwiper';
-import ChartItem from '@/components/page/ChartItem';
-import ListContainer from '@/components/layout/ListContainer';
+import ChartList from '@/components/page/ChartList';
 
 export default function page() {
   return (
@@ -8,9 +7,7 @@ export default function page() {
       <MainBannerSwiper />
       <article className="bg-gray">
         <div className="inner">
-          <ListContainer title="🌎 월드 차트">
-            <ChartItem />
-          </ListContainer>
+          <ChartList title={'🌎 월드 차트'} />
         </div>
       </article>
     </section>

@@ -10,4 +10,10 @@
     line-height: $line-height-lg;
     font-weight: $font-weight-bold;
   }
+
+  .list-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
