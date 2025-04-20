@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import TabSwiper from '@/components/common/TabSwiper';
-import { naviList } from '@/mock/tabList';
+import { naviList } from '@/constants/tabList';
 import '@/styles/layout/header.scss';
 import Image from 'next/image';
 
