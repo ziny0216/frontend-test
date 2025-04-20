@@ -28,9 +28,9 @@ export default function ChartItem(props: ChartItemType) {
             {getRankChange(props.rank, props.prevRank)}
           </span>
         </p>
-        <div className="char-info">
+        <div className="char-info chart-artist">
           <span>{props.artist}</span>
-          <span>{props.agency}</span>
+          <span className="ellipsis-clamp">{props.agency}</span>
         </div>
         <p className="char-info chart-factor ml-auto">
           {formatLocalString(props.score)}

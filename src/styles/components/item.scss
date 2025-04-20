@@ -104,6 +104,52 @@
 
     .chart-factor {
       align-self: flex-end;
+
+    }
+  }
+}
+
+
+/* 미디어 쿼리 */
+@include mobile {
+  .card-item {
+    .card-img {
+      max-height: 280px;
+    }
+
+    .card-content {
+      .title {
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+      }
+    }
+  }
+  .chart-item {
+    gap: 4px;
+
+    .chart-img {
+      max-width: 60px;
+      min-width: 60px;
+    }
+
+    .card-content {
+      gap: 4px;
+
+      .char-info {
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
+      }
+
+      .chart-rank {
+        .rank {
+          font-size: $font-size-md;
+          line-height: $line-height-md;
+        }
+      }
+
+      .chart-artist {
+        justify-content: space-between;
+      }
     }
   }
 }

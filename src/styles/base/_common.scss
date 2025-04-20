@@ -99,6 +99,15 @@ $img-ratio: (
   }
 }
 
+.ellipsis-clamp {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 
 @for $i from 1 through 5 {
   @if $i == 1 {

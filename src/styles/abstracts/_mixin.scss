@@ -1,3 +1,9 @@
+$breakpoint-pc: "screen and (min-width : 1280px)";
+$breakpoint-tablet: "screen and (max-width : 1280px)";
+$breakpoint-sm-tablet: "screen and (max-width : 1024px)";
+$breakpoint-xs-tablet: "screen and (max-width : 768px)";
+$breakpoint-mobile: "screen and (max-width : 550px)";
+
 @mixin img-box($radio,$radius:null) {
   aspect-ratio: $radio;
 
@@ -10,5 +16,47 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+}
+
+
+// min 1280px;
+@mixin pc {
+  @media #{$breakpoint-pc}{
+    @content;
+
+  }
+}
+
+// 1280px;
+@mixin tablet {
+  @media #{$breakpoint-tablet}{
+    @content;
+
+  }
+}
+
+// 1024px;
+@mixin sm-tablet {
+  @media #{$breakpoint-sm-tablet}{
+    @content;
+
+  }
+}
+
+
+// 768px;
+@mixin xs-tablet {
+  @media #{$breakpoint-xs-tablet}{
+    @content;
+
+  }
+}
+
+
+// 550px;
+@mixin mobile {
+  @media #{$breakpoint-mobile}{
+    @content;
   }
 }
