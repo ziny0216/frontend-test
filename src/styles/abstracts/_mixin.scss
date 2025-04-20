@@ -19,6 +19,35 @@ $breakpoint-mobile: "screen and (max-width : 550px)";
   }
 }
 
+@mixin groupLine($width,$height, $color , $gap) {
+  display: flex;
+  align-items: center;
+  span, a, .group_item {
+    display: flex;
+    align-items: center;
+
+    &:after {
+      margin: 0 $gap;
+      content: '';
+      width: $width;
+      height: $height;
+      background-color: $color;
+      display: block;
+    }
+
+    &:last-child {
+      &:after {
+        display: none
+      }
+
+      &:first-child {
+        &:after {
+          display: none
+        }
+      }
+    }
+  }
+}
 
 // min 1280px;
 @mixin pc {

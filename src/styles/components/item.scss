@@ -34,13 +34,6 @@
         width: calc(100% - 100px);
       }
     }
-
-    .date {
-      color: $gray-600;
-      font-size: $font-size-xs;
-      line-height: $line-height-xs;
-      text-align: right;
-    }
   }
 
   .badge {
@@ -53,7 +46,6 @@
 
 .chart-item {
   gap: 8px;
-
 
   .chart-img {
     max-width: 80px;
@@ -109,6 +101,44 @@
   }
 }
 
+.post-item {
+  gap: 8px;
+
+  .post-img {
+    max-width: 160px;
+  }
+
+  .post-content {
+    width: calc(100% - 168px);
+    justify-content: space-between;
+
+    .post-title {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+      font-weight: $font-weight-m;
+    }
+
+    .post-desc {
+      font-size: $font-size-sm;
+      line-height: $line-height-sm;
+      color: $gray-800;
+    }
+
+    .post-info {
+      display: flex;
+      justify-content: flex-end;
+      @include groupLine(1px, 10px, $gray-400, 4px)
+    }
+  }
+}
+
+
+.date, .wirter {
+  color: $gray-600;
+  font-size: $font-size-xs;
+  line-height: $line-height-xs;
+  text-align: right;
+}
 
 /* 미디어 쿼리 */
 @include mobile {
