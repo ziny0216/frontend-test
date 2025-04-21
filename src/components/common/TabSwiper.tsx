@@ -20,8 +20,8 @@ export default function TabSwiper({
   const pathname = usePathname();
   const [swiper, setSwiper] = useState<SwiperClass>();
   const [activeTab, setActiveTab] = useState(activeValue ?? '');
+
   useEffect(() => {
-    console.log(pathname);
     const activeName = pathname === '/' ? '/' : pathname.replace('/', '');
     setActiveTab(activeName);
   }, [pathname]);
