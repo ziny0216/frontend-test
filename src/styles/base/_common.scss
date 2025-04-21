@@ -13,6 +13,24 @@ section {
   }
 }
 
+.sticky-wrapper {
+  display: flex;
+  gap: 24px;
+
+  .left {
+    width: calc(70% - 24px);
+  }
+
+  .right {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    height: 300px;
+    top: 70px;
+  }
+}
+
 .bg-gray {
   background-color: #EBEBEB;
 }
@@ -139,4 +157,6 @@ $img-ratio: (
 .loading-icon {
   animation: rotate 1s linear infinite;
 }
+
+
 

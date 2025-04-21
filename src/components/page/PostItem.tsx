@@ -1,35 +1,26 @@
 import '@/styles/components/item.scss';
+import { PostItemType } from '@/types/post';
+import dayjs from 'dayjs';
 
-export default function PostItem() {
+export default function PostItem(props: PostItemType) {
   return (
     <div className="post-item flex">
       <div className="post-img img-full">
-        <img src={`https://picsum.photos/seed/1/1500`} alt={'포스트 이미지'} />
+        <img
+          src={`https://picsum.photos/seed/${props.id}/300`}
+          alt={`${props.title} 배너 이미지`}
+        />
       </div>
       <div className="post-content flex flex-col">
         <div className="post-txt ">
-          <h5 className="post-title ellipsis1">
-            [일간랭킹: 4월 19일] 에이티투메이저(82MAJOR )의 ‘SILENCE SYNDROME’
-            1위 - 일간랭킹일간랭킹
-          </h5>
-          <p className="post-desc ellipsis3">
-            4월 20일, 세계 유일의 실시간 음악차트를 서비스하고 있는 한터차트가
-            4월 19일의 일간 음반랭킹을 공개했다. 4월 19일의 일간 음반랭킹 1위는
-            에이티투메이저(82MAJOR )의 ‘SILENCE SYNDROME’ 앨범이다. 한터 4월
-            20일, 세계 유일의 실시간 음악차트를 서비스하고 있는 한터차트가 4월
-            19일의 일간 음반랭킹을 공개했다. 4월 19일의 일간 음반랭킹 1위는
-            에이티투메이저(82MAJOR )의 ‘SILENCE SYNDROME’ 앨범이다. 한터 4월
-            20일, 세계 유일의 실시간 음악차트를 서비스하고 있는 한터차트가 4월
-            19일의 일간 음반랭킹을 공개했다. 4월 19일의 일간 음반랭킹 1위는
-            에이티투메이저(82MAJOR )의 ‘SILENCE SYNDROME’ 앨범이다. 한터 4월
-            20일, 세계 유일의 실시간 음악차트를 서비스하고 있는 한터차트가 4월
-            19일의 일간 음반랭킹을 공개했다. 4월 19일의 일간 음반랭킹 1위는
-            에이티투메이저(82MAJOR )의 ‘SILENCE SYNDROME’ 앨범이다. 한터
-          </p>
+          <h5 className="post-title ellipsis1">{props.title}</h5>
+          <p className="post-desc ellipsis3">{props.description}</p>
         </div>
         <div className="post-info">
-          <span className="wirter">조여진</span>
-          <span className="date">2024.10.10</span>
+          <span className="writer">{props.writer}</span>
+          <span className="date">
+            {dayjs(props.date).format('YYYY.MM.DD hh:mm')}
+          </span>
         </div>
       </div>
     </div>
