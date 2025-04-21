@@ -6,13 +6,13 @@ export default function ListContainer({
   className,
   children,
 }: {
-  title: string;
+  title?: string;
   className?: string;
   children: ReactNode;
 }) {
   return (
     <div className={`list-container ${className || ''}`}>
-      <div className="list-title">{title}</div>
+      {title && <div className="list-title">{title}</div>}
       <div className="list-content">{children}</div>
     </div>
   );

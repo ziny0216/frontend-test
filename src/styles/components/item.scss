@@ -132,6 +132,53 @@
   }
 }
 
+.prod-item {
+  display: flex;
+  flex-direction: column;
+
+  .prod-content {
+    padding: 4px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
+    .prod-title {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0;
+
+      .title {
+        font-size: $font-size-md;
+        line-height: $line-height-md;
+        font-weight: $font-weight-m;
+      }
+
+    }
+
+    .prod-price {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      font-weight: $font-weight-m;
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+
+      .percent {
+        color: $main-color;
+        font-size: $font-size-xl;
+        line-height: $line-height-xl;
+        font-weight: $font-weight-bold;
+      }
+
+      .price {
+        text-decoration: line-through;
+        color: $gray-400
+      }
+
+    }
+  }
+}
 
 .date, .writer {
   color: $gray-600;
@@ -179,6 +226,35 @@
 
       .chart-artist {
         justify-content: space-between;
+      }
+    }
+  }
+
+  .prod-item {
+    .prod-content {
+      gap: 8px;
+
+      .prod-title {
+        .title {
+          font-size: $font-size-sm;
+          line-height: $line-height-sm;
+        }
+      }
+
+      .prod-price {
+        font-size: $font-size-sm;
+        line-height: $line-height-sm;
+
+        span {
+          padding-bottom: 2px;
+        }
+
+
+        .percent {
+          padding-bottom: 0;
+          font-size: $font-size-lg;
+          line-height: $line-height-lg
+        }
       }
     }
   }
