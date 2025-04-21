@@ -2,9 +2,12 @@ import '@/styles/components/item.scss';
 import { PostItemType } from '@/types/post';
 import dayjs from 'dayjs';
 
-export default function PostItem(props: PostItemType) {
+export default function PostItem({
+  type = 'row',
+  ...props
+}: PostItemType & { type?: 'row' | 'col' }) {
   return (
-    <div className="post-item flex">
+    <div className={`post-item flex post-${type}`}>
       <div className="post-img img-full">
         <img
           src={`https://picsum.photos/seed/${props.id}/300`}
@@ -12,9 +15,13 @@ export default function PostItem(props: PostItemType) {
         />
       </div>
       <div className="post-content flex flex-col">
-        <div className="post-txt ">
+        <div className="post-txt">
           <h5 className="post-title ellipsis1">{props.title}</h5>
-          <p className="post-desc ellipsis3">{props.description}</p>
+          <p
+            className={`post-desc ${type === 'row' ? 'ellipsis3' : 'ellipsis2'}`}
+          >
+            {props.description}
+          </p>
         </div>
         <div className="post-info">
           <span className="writer">{props.writer}</span>

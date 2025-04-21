@@ -132,6 +132,23 @@
   }
 }
 
+.post-col {
+  flex-direction: column;
+  height: 100%;
+
+  .post-img {
+    max-width: 100%;
+  }
+
+  .post-content {
+    width: 100%;
+
+    .post-desc {
+      min-height: 40px;
+    }
+  }
+}
+
 .prod-item {
   display: flex;
   flex-direction: column;

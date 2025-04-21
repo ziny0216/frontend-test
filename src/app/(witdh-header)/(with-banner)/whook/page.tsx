@@ -1,9 +1,11 @@
+import WhookList from '@/components/page/WhookList';
+
 export default function page() {
   return (
     <section className="whook_section">
-      <article>
-        <div className="inner">whook</div>
-      </article>
+      <div className="inner">
+        <WhookList />
+      </div>
     </section>
   );
 }

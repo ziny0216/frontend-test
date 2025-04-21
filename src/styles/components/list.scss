@@ -13,6 +13,13 @@
     font-size: $font-size-lg;
     line-height: $line-height-lg;
     font-weight: $font-weight-bold;
+
+    .sub-title {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+      font-weight: $font-weight-m;
+      color: $gray-700;
+    }
   }
 
   .list-content {
