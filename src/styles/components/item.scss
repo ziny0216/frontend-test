@@ -294,8 +294,11 @@
   .prod-item {
     .prod-content {
       gap: 8px;
+      position: relative;
 
       .prod-title {
+        max-width: calc(100% - 38px);
+
         .title {
           font-size: $font-size-sm;
           line-height: $line-height-sm;
@@ -305,14 +308,15 @@
       .prod-price {
         font-size: $font-size-sm;
         line-height: $line-height-sm;
-
-        span {
-          padding-bottom: 2px;
-        }
-
+        flex-wrap: wrap;
+        gap: 2px;
 
         .percent {
-          padding-bottom: 0;
+          position: absolute;
+          top: 0;
+          right: 4px;
+
+          text-align: right;
           font-size: $font-size-lg;
           line-height: $line-height-lg
         }

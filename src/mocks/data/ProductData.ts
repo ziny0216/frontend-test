@@ -21,7 +21,7 @@ export const productData = [
     price: 21073,
     sale_price: 13697,
     discount_percent: '35%',
-    stock: 56,
+    stock: 1,
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ export const productData = [
     price: 23249,
     sale_price: 20924,
     discount_percent: '10%',
-    stock: 167,
+    stock: 3,
   },
   {
     id: 6,
@@ -77,7 +77,7 @@ export const productData = [
     price: 30681,
     sale_price: 23010,
     discount_percent: '25%',
-    stock: 23,
+    stock: 4,
   },
   {
     id: 11,

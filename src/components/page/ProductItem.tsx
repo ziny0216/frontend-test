@@ -13,9 +13,12 @@ export default function ProductItem(props: ProductItemType) {
         />
       </div>
       <div className="prod-content flex">
-        <p className="prod-title  ellipsis-clamp">
-          <Badge size={'sm'} />
-          <span className="title">{props.prod_title}</span>
+        <p className="prod-title  ">
+          {props.stock <= 5 && (
+            <Badge size={'sm'} color={'gray'} text={'품절 임박'} />
+          )}
+
+          <span className="title ellipsis-clamp">{props.prod_title}</span>
         </p>
         <div className="prod-price">
           <span className="percent">{props.discount_percent}</span>
