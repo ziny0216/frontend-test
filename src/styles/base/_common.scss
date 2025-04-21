@@ -9,7 +9,34 @@ section {
     max-width: 1096px;
     padding: 24px 16px;
     margin: 0 auto;
+  }
+}
 
+.not-found {
+  max-width: 500px;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  h2 {
+    font-size: $font-size-xl;
+    line-height: $line-height-xl;
+    font-weight: $font-weight-bold;
+  }
+
+  p {
+    padding: 16px 0;
+    font-size: $font-size-lg;
+    line-height: $line-height-lg;
+    font-weight: $font-weight-m;
+  }
+
+  a {
+    color: $primary-color;
+    font-weight: $font-weight-bold;
+    display: block;
+    animation: upDown 1.5s ease-in-out infinite;
 
   }
 }
@@ -148,6 +175,9 @@ $img-ratio: (
   }
 }
 
+.loading-icon {
+  animation: rotate 1s linear infinite;
+}
 
 @keyframes rotate {
   100% {
@@ -155,10 +185,15 @@ $img-ratio: (
   }
 }
 
-.loading-icon {
-  animation: rotate 1s linear infinite;
-}
 
+@keyframes upDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
 
 /* 미디어 쿼리 */
 @include tablet {
