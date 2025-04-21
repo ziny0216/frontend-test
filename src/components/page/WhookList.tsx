@@ -53,8 +53,8 @@ export default function WhookList() {
     >
       {data?.pages.map((page, pageIndex) =>
         page.data.map((whook: PostItemType) => (
-          <Link className="text-inherit" href={`/event/${whook.id}`}>
-            <PostItem type={'col'} key={`event-${whook.id}`} {...whook} />
+          <Link className="text-inherit" href={`/whook/${whook.id}`}>
+            <PostItem type={'col'} key={`whook-${whook.id}`} {...whook} />
           </Link>
         )),
       )}

@@ -4,8 +4,8 @@ import type { Swiper as SwiperClass } from 'swiper';
 import 'swiper/css';
 import { TabItemType } from '@/types/common';
 import '@/styles/components/tab.scss';
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
 export default function TabSwiper({
   tabList,
@@ -17,8 +17,14 @@ export default function TabSwiper({
   handleTabItem?: (tab: TabItemType) => void;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [swiper, setSwiper] = useState<SwiperClass>();
   const [activeTab, setActiveTab] = useState(activeValue ?? '');
+  useEffect(() => {
+    console.log(pathname);
+    const activeName = pathname === '/' ? '/' : pathname.replace('/', '');
+    setActiveTab(activeName);
+  }, [pathname]);
 
   const onClickTab = (tab: TabItemType, idx: number) => {
     setActiveTab(tab.value); // 활성화 탭 저장
@@ -29,6 +35,8 @@ export default function TabSwiper({
       handleTabItem?.(tab);
     }
   };
+
+  useEffect(() => {}, []);
   return (
     <div className="tab-list">
       <Swiper
