@@ -5,7 +5,7 @@ export default function page() {
     <section className="home_section">
       <article className="bg-gray">
         <div className="inner">
-          <ChartList title={'🌎 월드 차트'} />
+          <ChartList />
         </div>
       </article>
     </section>

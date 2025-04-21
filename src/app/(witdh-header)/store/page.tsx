@@ -7,7 +7,7 @@ export default function page() {
       <div className="inner">
         <OnlyImageSwiper />
         <div>
-          <ProductList title={'상품'}></ProductList>
+          <ProductList></ProductList>
         </div>
       </div>
     </section>

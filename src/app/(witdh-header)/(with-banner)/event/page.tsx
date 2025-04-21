@@ -4,7 +4,7 @@ export default function page() {
   return (
     <section className="event_section">
       <div className="inner">
-        <EventList title={'이벤트'} />
+        <EventList />
       </div>
     </section>
   );

@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes } from 'react';
+import { ButtonHTMLAttributes, ReactNode } from 'react';
 
 export interface TabItemType {
   name: string;
@@ -11,3 +11,13 @@ export type ButtonPropsType = {
   className: string;
   isLoading?: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
+
+export interface InfinitePropsType<T> {
+  className?: string;
+  title: string;
+  subTitle?: string;
+  fetchList: ({ pageParam }: { pageParam: number }) => Promise<{ data: T[] }>;
+  renderItem: (item: T) => ReactNode;
+  queryKey: string[];
+  threshold?: number;
+}
