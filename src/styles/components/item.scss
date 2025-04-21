@@ -202,13 +202,24 @@
     &.middle {
       font-size: $font-size-md;
       line-height: $font-size-md;
-      padding-block: 8px;
+      padding-block: 10px;
+
+      span:last-child {
+        flex-shrink: 0;
+      }
     }
 
     &.btm {
       font-size: $font-size-sm;
       line-height: $font-size-sm;
-      color: $gray-500
+      color: $gray-500;
+
+      .date {
+        color: $gray-500;
+        font-size: $font-size-sm;
+        line-height: $font-size-sm;
+
+      }
     }
   }
 }

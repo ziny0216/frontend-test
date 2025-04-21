@@ -1,5 +1,5 @@
 import PointInfo from '@/components/common/PointInfo';
-import CreditItem from '@/components/page/CreditItem';
+import CreditList from '@/components/page/CreditList';
 
 export default function page() {
   return (
@@ -7,10 +7,7 @@ export default function page() {
       <article>
         <div className="inner">
           <PointInfo />
-          <CreditItem />
-          <CreditItem />
-          <CreditItem />
-          <CreditItem />
+          <CreditList />
         </div>
       </article>
     </section>

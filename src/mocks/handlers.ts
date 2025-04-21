@@ -3,6 +3,7 @@ import { bannerHandlers } from '@/mocks/handlers/bannerHandlers';
 import { eventHandler } from '@/mocks/handlers/eventHandler';
 import { newsHandlers } from '@/mocks/handlers/newsHandlers';
 import { productHandler } from '@/mocks/handlers/producHandler';
+import { creditHandler } from '@/mocks/handlers/creditHandler';
 
 export const handlers = [
   ...chartHandlers,
@@ -10,4 +11,5 @@ export const handlers = [
   ...eventHandler,
   ...newsHandlers,
   ...productHandler,
+  ...creditHandler,
 ];
