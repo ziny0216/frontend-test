@@ -1,30 +1,14 @@
 import { http, HttpResponse } from 'msw';
 import { hotNewsData, newsData, whookData } from '@/mocks/data/postData';
+import { createPaginationRes } from '@/utils/response';
 
 export const postHandler = [
   http.get('/api/news', ({ request }) => {
     const url = new URL(request.url);
     const page = Number(url.searchParams.get('page') || 1);
     const limit = Number(url.searchParams.get('limit') || 10);
-    const total = newsData.length;
-    const maxPage = Math.ceil(total / limit);
-
-    if (page < 1) {
-      return HttpResponse.json(
-        { error: '유효하지 않은 페이지입니다.' },
-        { status: 400 },
-      );
-    }
-
-    const start = (page - 1) * limit;
-    const paginated = newsData.slice(start, start + limit);
-
-    return HttpResponse.json({
-      page,
-      limit,
-      total,
-      data: page > maxPage ? [] : paginated,
-    });
+    const result = createPaginationRes(newsData, page, limit);
+    return HttpResponse.json(result.body, { status: result.status });
   }),
 
   http.get('/api/news/hot', () => {
@@ -35,24 +19,7 @@ export const postHandler = [
     const url = new URL(request.url);
     const page = Number(url.searchParams.get('page') || 1);
     const limit = Number(url.searchParams.get('limit') || 10);
-    const total = whookData.length;
-    const maxPage = Math.ceil(total / limit);
-
-    if (page < 1) {
-      return HttpResponse.json(
-        { error: '유효하지 않은 페이지입니다.' },
-        { status: 400 },
-      );
-    }
-
-    const start = (page - 1) * limit;
-    const paginated = whookData.slice(start, start + limit);
-
-    return HttpResponse.json({
-      page,
-      limit,
-      total,
-      data: page > maxPage ? [] : paginated,
-    });
+    const result = createPaginationRes(whookData, page, limit);
+    return HttpResponse.json(result.body, { status: result.status });
   }),
 ];
