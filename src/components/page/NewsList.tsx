@@ -26,7 +26,7 @@ export default function NewsList() {
   });
 
   const fetchNewsList = async ({ pageParam = 1 }) => {
-    const res = await fetch(`/api/post?page=${pageParam}&limit=10`);
+    const res = await fetch(`/api/news?page=${pageParam}&limit=10`);
     return res.json();
   };
 
