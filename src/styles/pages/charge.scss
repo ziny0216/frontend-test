@@ -1,0 +1,25 @@
+@use '../index' as *;
+
+.point-box {
+  background-color: $gray-200;
+  border-radius: $border-radius-md;
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  .point-info {
+    .title {
+      font-size: $font-size-md;
+      line-height: $line-height-md;
+      font-weight: $font-weight-m;
+    }
+
+    .point {
+      padding-top: 8px;
+      font-size: $font-size-xl;
+      line-height: $line-height-xl;
+      font-weight: $font-weight-bold;
+    }
+  }
+}

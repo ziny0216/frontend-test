@@ -3,13 +3,15 @@ import '@/styles/components/badge.scss';
 export default function Badge({
   size = 'md',
   color = 'pink',
+  text = '진행중',
 }: {
   size?: 'md' | 'sm';
-  color?: 'pink' | 'black' | 'gary';
+  color?: 'pink' | 'black' | 'gray';
+  text?: string;
 }) {
   return (
     <span className={`${size === 'md' ? 'badge' : 'badge-sm'} badge-${color}`}>
-      진행중
+      {text}
     </span>
   );
 }

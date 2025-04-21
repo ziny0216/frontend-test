@@ -180,6 +180,39 @@
   }
 }
 
+.credit-item {
+  border-bottom: 1px solid $gray-200;
+  padding: 16px 4px;
+
+  &:last-of-type {
+    border-bottom: 0;
+  }
+
+  .credit-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-weight: $font-weight-m;
+
+    &.top {
+      justify-content: flex-start;
+    }
+
+    &.middle {
+      font-size: $font-size-md;
+      line-height: $font-size-md;
+      padding-block: 8px;
+    }
+
+    &.btm {
+      font-size: $font-size-sm;
+      line-height: $font-size-sm;
+      color: $gray-500
+    }
+  }
+}
+
 .date, .writer {
   color: $gray-600;
   font-size: $font-size-xs;
