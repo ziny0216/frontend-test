@@ -2,7 +2,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import '@/styles/components/banner.scss';
 
 export default function OnlyImageSwiper() {
@@ -14,7 +14,7 @@ export default function OnlyImageSwiper() {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        modules={[Pagination]}
+        modules={[Pagination, Autoplay]}
         pagination={{
           type: 'fraction',
         }}
