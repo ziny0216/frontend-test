@@ -21,7 +21,7 @@ export default function WhookList() {
       renderItem={whook => (
         <Link
           key={`whook-${whook.id}`}
-          href={`/whook/${whook.id}`}
+          href={`/whook`}
           className="text-inherit"
         >
           <PostItem type="col" {...whook} />

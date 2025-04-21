@@ -18,11 +18,7 @@ export default function ProductList() {
       queryKey={['product']}
       fetchList={fetchProductList}
       renderItem={prod => (
-        <Link
-          key={`prod-${prod.id}`}
-          href={`/prod/${prod.id}`}
-          className="text-inherit"
-        >
+        <Link key={`prod-${prod.id}`} href={`/prod`} className="text-inherit">
           <ProductItem {...prod} />
         </Link>
       )}

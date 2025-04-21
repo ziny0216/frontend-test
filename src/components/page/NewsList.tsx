@@ -31,11 +31,7 @@ export default function NewsList() {
         queryKey={['news']}
         fetchList={fetchNewsList}
         renderItem={news => (
-          <Link
-            key={`news-${news.id}`}
-            href={`/news/${news.id}`}
-            className="text-inherit"
-          >
+          <Link key={`news-${news.id}`} href={`/news`} className="text-inherit">
             <PostItem {...news} />
           </Link>
         )}
@@ -46,7 +42,7 @@ export default function NewsList() {
           <Link
             key={`hot-news-${news.id}`}
             className="text-inherit"
-            href={`/news/${news.id}`}
+            href={`/news`}
           >
             <PostItem {...news} />
           </Link>

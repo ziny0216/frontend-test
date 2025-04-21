@@ -20,7 +20,7 @@ export default function EventList() {
       renderItem={event => (
         <Link
           key={`event-${event.id}`}
-          href={`/event/${event.id}`}
+          href={`/event`}
           className="text-inherit"
         >
           <CardItem {...event} />
