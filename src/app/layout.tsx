@@ -19,11 +19,11 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={spoqa.variable}>
-        <ReactQueryProvider>
-          <MswProvider>
+        <MswProvider>
+          <ReactQueryProvider>
             <StoreProvider> {children}</StoreProvider>
-          </MswProvider>
-        </ReactQueryProvider>
+          </ReactQueryProvider>
+        </MswProvider>
       </body>
     </html>
   );
