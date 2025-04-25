@@ -5,7 +5,11 @@
 Next.js App Router 기반으로 <strong>게시판 리스트 및 무한스크롤 기능</strong>을 구현했고,  
 모바일까지 대응한 <strong>반응형 UI</strong>로 구성했습니다.
 <br>
-https://hanteo-yeojin.vercel.app/
+배포 주소 :
+https://frontend-yeojin.vercel.app/
+<br>
+프로젝트 회고 : https://velog.io/@ziny0216/Next.js-프론트엔드-과제-후기
+<br>
 
 ### 과제 요구 사항
 
