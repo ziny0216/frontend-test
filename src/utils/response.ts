@@ -1,5 +1,3 @@
-import { whookData } from '@/mocks/data/postData';
-
 export interface PaginatedResult<T> {
   page: number;
   limit: number;
@@ -16,7 +14,7 @@ export function createPaginationRes<T>(
   page: number,
   limit: number,
 ): { status: number; body: PaginatedResult<T> | PaginatedError } {
-  const total = whookData.length;
+  const total = data.length;
   const maxPage = Math.ceil(total / limit);
 
   if (page < 1) {
